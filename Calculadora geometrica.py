@@ -9,13 +9,15 @@ print("--------------------------------------------")
 
 Figuras = None
 seguir = "si"
-try:
-    while seguir == "si":
+while seguir == "si":
+    try:    
         Figuras = int(input("Por favor digame en que figura lo puedo ayudar tenemos: \nFIGURAS 2D \n\n1.RECTANGULO \n2.CIRCULO \n3.TRAPECIO \n4.PARALELOGRAMO \n\nFIGURAS 3D \n\n5.PARALELEPIPEDO \n6.PRISMA RECTANGULAR \n7.CILINDRO \n8.ESFERA \n\n9.TRIANGULO RECTANGULO: \n\n"))
-except ValueError or NameError:
+        if Figuras < 1 or Figuras > 9:
+            print("Digito no disponible, vuelva a intentarlo")
+            continue
+    except (ValueError, NameError):
         print("Opcion invalida vuelva a intentarlo: ")   
-        Figuras = int(input("Por favor digame en que figura lo puedo ayudar tenemos: \nFIGURAS 2D \n\n1.RECTANGULO \n2.CIRCULO \n3.TRAPECIO \n4.PARALELOGRAMO \n\nFIGURAS 3D \n\n5.PARALELEPIPEDO \n6.PRISMA RECTANGULAR \n7.CILINDRO \n8.ESFERA \n\n9.TRIANGULO RECTANGULO: \n\n"))
-       
+        continue   
 
         if Figuras == 1:
             RECTANGULO = C_R = input("Porfavor dime que quieres calcular del Rectangulo te puedo hallar: \nArea (a) \nBase (b) \nAltura (h) \nPerimetro (p) ")
